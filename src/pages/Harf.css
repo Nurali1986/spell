@@ -1,0 +1,96 @@
+/* GRID joylashuvi */
+.harf-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Harf.css ga qo'shing */
+.harf-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.harf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* KARTA — default: kompyuter uchun */
+.harf-card {
+  width: 100%;
+  aspect-ratio: 1; /* Kvadrat shaklida saqlash */
+  background: #d8f8d8;
+  border: 4px solid #1000f7;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(254, 254, 254, 0);
+}
+
+/* Matnlar — komputer uchun */
+.harf-top{
+  font-size: 32px;
+  font-weight: bold;
+  color: #d60000;
+  text-align: center;
+  line-height: 1.2;
+}
+
+
+.harf-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ------------ MOBIL VERSIYA ------------ */
+@media (max-width: 768px) {
+  .harf-container {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .harf-card {
+    padding: 8px;
+  }
+
+  .harf-top {
+    font-size: 18px;
+  }
+
+  .harf-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .harf-container {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .harf-card {
+    padding: 5px;
+  }
+
+  .harf-top {
+    font-size: 18px;
+  }
+
+  .harf-img {
+    width: 35px;
+    height: 35px;
+  }
+}

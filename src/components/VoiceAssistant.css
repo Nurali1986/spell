@@ -1,0 +1,255 @@
+.voice-assistant {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  z-index: 10000;
+}
+
+/* Asosiy mikrafon tugmasi */
+.mic-button {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.mic-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6);
+}
+
+.mic-button.listening {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/* Dialog oyna */
+.voice-dialog {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid #e2e8f0;
+  z-index: 10000;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Yopish tugmasi */
+.close-button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: #f8f9fa;
+}
+
+/* Dialog sarlavhasi */
+.dialog-header {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.dialog-header h3 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Dialog mikrafon tugmasi */
+.dialog-mic-button {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+}
+
+.dialog-mic-button:hover {
+  transform: scale(1.05);
+}
+
+.dialog-mic-button.listening {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+/* Pulsatsiya effekti */
+.pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #667eea;
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite;
+}
+
+.pulse-ring.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.mic-button.listening .pulse-ring,
+.dialog-mic-button.listening .pulse-ring {
+  border-color: #ff6b6b;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Transkripsiya qutisi */
+.transcript-box {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 6px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.transcript-text {
+  color: #2d3748;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+}
+
+/* Holat ko'rsatkichi */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #48bb78;
+}
+
+.status-dot.listening {
+  background: #ed8936;
+  animation: blink 1s infinite;
+}
+
+.status-dot.idle {
+  background: #48bb78;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.3;
+  }
+}
+
+.status-indicator span {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* Qo'llanma */
+.instructions {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.instructions p {
+  margin: 4px 0;
+  color: #6c757d;
+  font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .voice-assistant {
+    bottom: 70px;
+    right: 20px;
+  }
+  
+  .mic-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .voice-dialog {
+    width: 280px;
+    right: -10px;
+  }
+  
+  .dialog-mic-button {
+    width: 70px;
+    height: 70px;
+  }
+}

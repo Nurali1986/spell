@@ -1,0 +1,143 @@
+.alifbe-main {
+  flex: 1;
+  min-height: 100px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow-y: auto;
+  border-radius: 16px;
+
+}
+
+.main-content {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Subject placeholder styles */
+.subject-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+.placeholder-content {
+  background: rgba(255, 255, 255, 0.95);
+ 
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.placeholder-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.placeholder-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.progress-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 60%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress-indicator span {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 1023px) {
+  .alifbe-main {
+    margin-top: 0;
+  }
+  
+  .subject-placeholder {
+    padding: 20px;
+  }
+  
+  .placeholder-content {
+    padding: 40px 24px;
+  }
+  
+  .placeholder-icon {
+    font-size: 3rem;
+  }
+  
+  .placeholder-content h1 {
+    font-size: 2rem;
+  }
+  
+  .placeholder-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .alifbe-main {
+    margin-left: 0;
+  }
+}

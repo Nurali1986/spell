@@ -1,0 +1,216 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px 20px 20px;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #e9ecef;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+
+.footer-link:hover {
+  color: #007bff;
+}
+
+.footer-apps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.apps-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.app-stores {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.app-store-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.app-store-link:hover {
+  transform: translateY(-2px);
+}
+
+.app-icon {
+  width: 120px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.app-store-link:hover .app-icon {
+  opacity: 0.8;
+}
+
+.social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  padding: 4px 0;
+}
+
+.social-link:hover {
+  color: #007bff;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.1);
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-note {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #dee2e6;
+  padding-top: 20px;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px 15px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .app-stores {
+    justify-content: center;
+  }
+
+  .social-links {
+    align-items: center;
+  }
+
+  .social-link {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px 10px;
+  }
+
+  .footer-container {
+    gap: 25px;
+  }
+
+  .app-stores {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .app-icon {
+    width: 140px;
+    height: 45px;
+  }
+
+  .social-links {
+    gap: 8px;
+  }
+}
+
+/* Katta ekranlar uchun */
+@media (min-width: 1200px) {
+  .footer-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
